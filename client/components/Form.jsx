@@ -13,7 +13,7 @@ class Form extends React.Component {
   render () {
     return (
       <>
-        <Form>
+        <form>
           <label>
             Name:
             <input type="text" name="name" onChange={this.handleChange} />
@@ -22,7 +22,7 @@ class Form extends React.Component {
             Password:
             <input type="text" name="password" onChange={this.handleChange} />
           </label>
-        </Form>
+        </form>
       </>
     )
   }
