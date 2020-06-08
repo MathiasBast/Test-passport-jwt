@@ -2,7 +2,8 @@ const fs = require('fs')
 const path = require('path')
 
 module.exports = {
-  getData
+  getData,
+  addUser
 }
 
 function getData (file, callback) {
@@ -17,5 +18,23 @@ function getData (file, callback) {
       // eslint-disable-next-line no-console
       callback(console.error('Theres a problem here'))
     }
+  })
+}
+
+function addUser (data, file, callback) {
+  const { username, password } = data
+  const fileName = path.join(__dirname, file + '.json')
+  fs.readFile(fileName, (err, contents) => {
+    if (err) return new Error('cant load')
+    var json = JSON.parse(contents)
+    const id = json.users.length + 1
+    const newData = {
+      id,
+      username,
+      password
+    }
+    json.users.push(newData)
+    const string = JSON.stringify(json, null, 2)
+    fs.writeFile(fileName, string, 'utf-8', callback)
   })
 }
