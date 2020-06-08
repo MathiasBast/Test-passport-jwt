@@ -1,9 +1,6 @@
 import request from 'superagent'
 
-export function logIn (username, password) {
-  return request.post('/api/v1/user')
-    .send({ password, username })
-    .then(res => {
-      console.log(res)
-    })
+export function getData (username, password) {
+  return request.get(`/api/v1/user/${username}/${password}`)
+    .then(res => res.body)
 }

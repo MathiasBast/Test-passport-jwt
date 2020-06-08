@@ -13,7 +13,6 @@ class Form extends React.Component {
   }
 
   handleSubmit = event => {
-    console.log(this.state)
     logIn(this.state.password, this.state.name)
   }
 

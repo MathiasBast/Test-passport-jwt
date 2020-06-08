@@ -3,9 +3,13 @@ const router = express.Router()
 
 const utils = require('./utils')
 
-router.post('/', (req, res) => {
-  console.log(req.body)
-  res.sendStatus(202)
+router.get('/:username/:password', (req, res) => {
+  const { username, password } = req.params
+  console.log(username, password)
+  utils.getData('data', (err, data) => {
+    if (err) return res.status(500).send(err.message)
+    res.status(200).json(data)
+  })
 })
 
 module.exports = router
