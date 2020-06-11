@@ -30,7 +30,7 @@ function addUser (data, file, callback) {
     const id = json.users.length + 1
     const newData = {
       id,
-      username,
+      name: username,
       password
     }
     json.users.push(newData)

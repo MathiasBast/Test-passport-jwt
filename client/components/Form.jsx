@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { logIn } from '../api'
+import { addData } from '../api'
 
 class Form extends React.Component {
   state = {
@@ -13,7 +13,7 @@ class Form extends React.Component {
   }
 
   handleSubmit = event => {
-    logIn(this.state.password, this.state.name)
+    addData(this.state.password, this.state.name)
   }
 
   render () {

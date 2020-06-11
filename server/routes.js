@@ -18,7 +18,6 @@ router.post('/:username/:password', (req, res) => {
   }
   utils.addUser(data, 'data', (err, data) => {
     if (err) return res.status(500).send(err.message)
-    console.log(data)
     res.status(200).json(data)
   })
 })
