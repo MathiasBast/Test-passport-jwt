@@ -20,6 +20,21 @@ router.post('/login',
     res.redirect('/users/' + req.user.username)
   })
 
+router.post('/register', (req, res, next) => {
+  passport.authenticate('register', (err, user, info) => {
+    if (err) {
+      console.error(err)
+    }
+    if (info !== undefined) {
+      res.statusMessage = `${info.message}`
+      res.status(403).end()
+    } else {
+      res.statusMessage = 'user created!'
+      res.status(200).end()
+    }
+  })(req, res, next)
+})
+
 router.post('/:username/:password', (req, res) => {
   const { username, password } = req.params
   const data = {

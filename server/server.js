@@ -4,6 +4,7 @@ const passport = require('passport')
 
 const server = express()
 
+require('./config/passport')
 const user = require('./routes')
 
 server.use(express.json())

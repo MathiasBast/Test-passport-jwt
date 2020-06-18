@@ -24,7 +24,7 @@ function getData (file, callback) {
 
 function addUser (data, file, callback) {
   const { username, password } = data
-  const fileName = path.join(__dirname, file + '.json')
+  const fileName = path.join(__dirname, 'data.json')
   fs.readFile(fileName, (err, contents) => {
     if (err) return new Error('cant load')
     var json = JSON.parse(contents)
@@ -41,15 +41,17 @@ function addUser (data, file, callback) {
 }
 
 function findUser (username, callback) {
+  const fileName = path.join(__dirname, 'data.json')
   fs.readFile(fileName, 'UTF-8', (err, contents) => {
     if (err) return callback(new Error('Unable to load data file'))
     try {
       const json = JSON.parse(contents)
       var user = json.users.filter(user => user.name === username)
+      console.log(user)
       if (user.length === 0) {
-        callback(null, false)
-      } else {
         callback(null, true)
+      } else {
+        callback(null, false)
       }
     } catch (err) {
       // eslint-disable-next-line no-console
