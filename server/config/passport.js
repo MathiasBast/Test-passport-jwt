@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt')
 // const db = require('../db/db')
+const utils = require('../utils')
 
 const jwtSecret = process.env.SECRET_KEY
 const BCRYPT_SALT_ROUNDS = 12
@@ -22,23 +23,7 @@ passport.use(
     (req, username, password, done) => {
 
       try {
-        db.findUser(username).then(user => {
-          if (user != null) {
-            console.log('username already taken')
-            return done(null, false, {
-              message: 'username already taken'
-            })
-          }
-          bcrypt.hash(password, BCRYPT_SALT_ROUNDS).then(hashedPassword => {
-            db.registerUser({
-              username,
-              password: hashedPassword
-            }).then(user => {
-              console.log('user created')
-              return done(null, user)
-            })
-          })
-        })
+        utils.findUser(username, ())
       } catch (err) {
         return done(err)
       }
