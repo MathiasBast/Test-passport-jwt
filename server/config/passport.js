@@ -21,14 +21,29 @@ passport.use(
       session: false
     },
     (req, username, password, done) => {
-
       try {
-        utils.findUser(username, ())
+        utils.findUser(username, (err, resp) => {
+          if (err) return done(null, false, {
+            message: 'username already taken'
+          })
+          if(!resp) return done(null, false, {
+            message: 'username already taken'
+          })
+          bcrypt.hash(password, BCRYPT_SALT_ROUNDS).then(hashedPassword => {
+            utils.addUser({
+              username,
+              password: hashedPassword
+            }).then(user => {
+              console.log('user created')
+              return done(null, user)
+            })
+          })
+        })
       } catch (err) {
         return done(err)
       }
     }
-  )
+  
 )
 
 passport.use(

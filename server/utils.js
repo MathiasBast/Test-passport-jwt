@@ -47,7 +47,7 @@ function findUser (username, callback) {
       const json = JSON.parse(contents)
       var user = json.users.filter(user => user.name === username)
       if (user.length === 0) {
-        callback(new Error('username taken'), null)
+        callback(null, false)
       } else {
         callback(null, true)
       }
