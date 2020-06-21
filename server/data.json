@@ -29,6 +29,36 @@
       "id": 6,
       "name": "ss",
       "password": "Mathias"
+    },
+    {
+      "id": 7,
+      "name": "Mattdadie",
+      "password": "$2b$12$opntIc9MbDRbhtRLaqfAfePW40W7HEpK.e1IJOzH60Vd6NSfnFbyO"
+    },
+    {
+      "id": 8,
+      "name": "Hello",
+      "password": "$2b$12$2PsAv7YxCgZgDlathFwOE.22lv9MgyXjG439JsduagIa3gJRhzB6O"
+    },
+    {
+      "id": 9,
+      "name": "Hello1",
+      "password": "$2b$12$RV7DovBTKOsgb.WtG2Xhl.P4Ms93qr7m5OLcC52IsFgcHbUiDOJmW"
+    },
+    {
+      "id": 10,
+      "name": "Test",
+      "password": "$2b$12$kJC4/2mHzzSEypFiEdumBOk.2gByUjA8TiuUwyLiVPGB2gGP/vwp."
+    },
+    {
+      "id": 11,
+      "name": "Test1",
+      "password": "$2b$12$uY0fVKsFsG2KM5qRSvfVbuH85FISWpP1mzGJV6JpHur33LtUjkSyG"
+    },
+    {
+      "id": 12,
+      "name": "Test3",
+      "password": "$2b$12$yCS9vczhb/KyK4nOtIV4xubRKXkOwd1yGrLxn9nu1xG74jxHJt/QO"
     }
   ]
 }

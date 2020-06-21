@@ -22,7 +22,7 @@ function getData (file, callback) {
   })
 }
 
-function addUser (data, file, callback) {
+function addUser (data, callback) {
   const { username, password } = data
   const fileName = path.join(__dirname, 'data.json')
   fs.readFile(fileName, (err, contents) => {
