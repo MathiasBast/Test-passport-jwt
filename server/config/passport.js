@@ -38,12 +38,12 @@ passport.use(
               username,
               password: hashedPassword
             }, (err, respo) => {
-              console.log(hashedPassword)
               if (err) {
                 return done(null, false, {
                   message: err.message
                 })
               }
+              const user = { username, password: hashedPassword }
               console.log('user created')
               return done(null, user)
             })
