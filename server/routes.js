@@ -42,16 +42,6 @@ router.post('/login', (req, res, next) => {
           message: 'user found & logged in'
         })
       })
-      // .then(user => {
-      //   const token = jwt.sign({ id: user.id }, jwtSecret, {
-      //     expiresIn: 60 * 60
-      //   })
-      //   res.status(200).send({
-      //     auth: true,
-      //     token,
-      //     message: 'user found & logged in'
-      //   })
-      // })
     }
   })(req, res, next)
 })
