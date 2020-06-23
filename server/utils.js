@@ -4,7 +4,8 @@ const path = require('path')
 module.exports = {
   getData,
   addUser,
-  findUser
+  findUser,
+  findUserById
 }
 
 function getData (file, callback) {
@@ -51,6 +52,26 @@ function findUser (username, callback) {
         callback(null, { res: true })
       } else {
         callback(null, { res: false, user: user[0] })
+      }
+    } catch (err) {
+      // eslint-disable-next-line no-console
+      callback(console.error('Theres a problem here'))
+    }
+  })
+}
+
+function findUserById (id, callback) {
+
+  const fileName = path.join(__dirname, 'data.json')
+  fs.readFile(fileName, 'UTF-8', (err, contents) => {
+    if (err) return callback(new Error('Unable to load data file'))
+    try {
+      const json = JSON.parse(contents)
+      var user = json.users.filter(user => user.id === id)
+      if (user.length === 0) { // If there is no user
+        callback(null, { res: true })
+      } else {
+        callback(null, { res: false, user: user })
       }
     } catch (err) {
       // eslint-disable-next-line no-console
