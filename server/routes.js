@@ -1,9 +1,14 @@
-require('dotenv').config()
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
+
 const express = require('express')
 const router = express.Router()
 const passport = require('passport')
+const jwt = require('jsonwebtoken')
 
 const utils = require('./utils')
+const jwtSecret = process.env.SECRET_KEY
 
 router.get('/', (req, res) => {
   utils.getData('data', (err, data) => {
@@ -26,19 +31,27 @@ router.post('/login', (req, res, next) => {
         res.status(403).end()
       }
     } else {
-      console.log('sign JWT here')
-      res.status(200).send({ yes: 'Loged in no JWT' }).end()
-      // db.findUser(req.body.username)
-      //   .then(user => {
-      //     const token = jwt.sign({ id: user.id }, jwtSecret, {
-      //       expiresIn: 60 * 60
-      //     })
-      //     res.status(200).send({
-      //       auth: true,
-      //       token,
-      //       message: 'user found & logged in'
-      //     })
+      utils.findUser(req.body.username, (err, user) => {
+        if (err) res.status(403)
+        const token = jwt.sign({ id: user.id }, jwtSecret, {
+          expiresIn: 60 * 60
+        })
+        res.status(200).send({
+          auth: true,
+          token,
+          message: 'user found & logged in'
+        })
+      })
+      // .then(user => {
+      //   const token = jwt.sign({ id: user.id }, jwtSecret, {
+      //     expiresIn: 60 * 60
       //   })
+      //   res.status(200).send({
+      //     auth: true,
+      //     token,
+      //     message: 'user found & logged in'
+      //   })
+      // })
     }
   })(req, res, next)
 })
