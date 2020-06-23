@@ -107,15 +107,6 @@ passport.use(
           done(null, res)
         }
       })
-      // .then(user => {
-      //   if (user) {
-      //     console.log('user is authorized for next action ', user.username)
-      //     done(null, user)
-      //   } else {
-      //     console.log('user not found in db')
-      //     done(null, false)
-      //   }
-      // })
     } catch (err) {
       done(err)
     }
