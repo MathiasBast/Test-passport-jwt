@@ -61,7 +61,6 @@ function findUser (username, callback) {
 }
 
 function findUserById (id, callback) {
-
   const fileName = path.join(__dirname, 'data.json')
   fs.readFile(fileName, 'UTF-8', (err, contents) => {
     if (err) return callback(new Error('Unable to load data file'))
@@ -69,9 +68,9 @@ function findUserById (id, callback) {
       const json = JSON.parse(contents)
       var user = json.users.filter(user => user.id === id)
       if (user.length === 0) { // If there is no user
-        callback(null, { res: true })
+        callback(null, false)
       } else {
-        callback(null, { res: false, user: user })
+        callback(null, user)
       }
     } catch (err) {
       // eslint-disable-next-line no-console

@@ -96,16 +96,26 @@ passport.use(
   'jwt',
   new JWTstrategy(opts, (jwtPayload, done) => {
     try {
-      db.findUserJWT(jwtPayload.id)
-        .then(user => {
-          if (user) {
-            console.log('user is authorized for next action ', user.username)
-            done(null, user)
-          } else {
-            console.log('user not found in db')
-            done(null, false)
-          }
-        })
+      utils.findUserById(jwtPayload.id, (err, res) => {
+        // eslint-disable-next-line no-console
+        if (err) console.log(err)
+        if (res === false) {
+          console.log('user not found in db')
+          done(null, false)
+        } else {
+          console.log('user is authorized for next action ', res.username)
+          done(null, res)
+        }
+      })
+      // .then(user => {
+      //   if (user) {
+      //     console.log('user is authorized for next action ', user.username)
+      //     done(null, user)
+      //   } else {
+      //     console.log('user not found in db')
+      //     done(null, false)
+      //   }
+      // })
     } catch (err) {
       done(err)
     }
