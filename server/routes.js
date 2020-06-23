@@ -61,16 +61,4 @@ router.post('/register', (req, res, next) => {
   })(req, res, next)
 })
 
-router.post('/:username/:password', (req, res) => {
-  const { username, password } = req.params
-  const data = {
-    username,
-    password
-  }
-  utils.addUser(data, 'data', (err, data) => {
-    if (err) return res.status(500).send(err.message)
-    res.status(200).json(data)
-  })
-})
-
 module.exports = router
