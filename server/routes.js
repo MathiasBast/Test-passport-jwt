@@ -12,13 +12,36 @@ router.get('/', (req, res) => {
   })
 })
 
-router.post('/login',
-  passport.authenticate('local'),
-  function (req, res) {
-    // If this function gets called, authentication was successful.
-    // `req.user` contains the authenticated user.
-    res.redirect('/users/' + req.user.username)
-  })
+router.post('/login', (req, res, next) => {
+  passport.authenticate('login', (err, users, info) => {
+    if (err) {
+      console.error(`error ${err}`)
+    }
+    if (info !== undefined) {
+      console.log('login error ', info.message)
+      res.statusMessage = `${info.message}`
+      if (info.message === 'bad username') {
+        res.status(401).end()
+      } else {
+        res.status(403).end()
+      }
+    } else {
+      console.log('sign JWT here')
+      res.status(200).send({ yes: 'Loged in no JWT' }).end()
+      // db.findUser(req.body.username)
+      //   .then(user => {
+      //     const token = jwt.sign({ id: user.id }, jwtSecret, {
+      //       expiresIn: 60 * 60
+      //     })
+      //     res.status(200).send({
+      //       auth: true,
+      //       token,
+      //       message: 'user found & logged in'
+      //     })
+      //   })
+    }
+  })(req, res, next)
+})
 
 router.post('/register', (req, res, next) => {
   passport.authenticate('register', (err, user, info) => {

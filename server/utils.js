@@ -47,11 +47,10 @@ function findUser (username, callback) {
     try {
       const json = JSON.parse(contents)
       var user = json.users.filter(user => user.name === username)
-      console.log(user)
       if (user.length === 0) { // If there is no user
         callback(null, { res: true })
       } else {
-        callback(null, { res: false, user: user })
+        callback(null, { res: false, user: user[0] })
       }
     } catch (err) {
       // eslint-disable-next-line no-console

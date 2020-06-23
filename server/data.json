@@ -64,6 +64,16 @@
       "id": 13,
       "name": "Test5",
       "password": "$2b$12$3O7fphTh.nKy7wJ1wZk/oetzht6sEkmwxur/8u8H7287tA5uwp5gy"
+    },
+    {
+      "id": 14,
+      "name": "mathias",
+      "password": "$2b$12$G2z59XcNjY/uCfDMJkNmPec3n7IAyE0jxVVVZIYobh7ByJdZ7CaL2"
+    },
+    {
+      "id": 15,
+      "name": "Tibbza",
+      "password": "$2b$12$HC/XxwSrkqX2WXg32o/g5ewueVtOVRk9UYfNXYqGCApRk4hntsfJ6"
     }
   ]
 }
