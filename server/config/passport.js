@@ -69,6 +69,16 @@ passport.use(
         utils.findUser(username, (err, resp) => {
           if (err) return done(null, false, { message: 'incorrect username or password' })
           if (resp) return done(null, false, { message: 'incorrect username or password' })
+          else {
+            bcrypt.compare(password, user.password).then(response => {
+              if (response !== true) {
+                console.log('passwords do not match')
+                return done(null, false, { message: 'incorrect username or password' })
+              }
+              console.log('user found & authenticated')
+              return done(null, user)
+            })
+          }
         })
         // .then(user => {
         //   if (!user) {
