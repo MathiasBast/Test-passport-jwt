@@ -80,20 +80,6 @@ passport.use(
             })
           }
         })
-        // .then(user => {
-        //   if (!user) {
-        //     console.log('user was not found in database')
-        //     return done(null, false, { message: 'incorrect username or password' })
-        //   }
-        //   bcrypt.compare(password, user.password).then(response => {
-        //     if (response !== true) {
-        //       console.log('passwords do not match')
-        //       return done(null, false, { message: 'incorrect username or password' })
-        //     }
-        //     console.log('user found & authenticated')
-        //     return done(null, user)
-        //   })
-        // })
       } catch (err) {
         done(err)
       }
