@@ -3,82 +3,37 @@
     {
       "id": 1,
       "name": "Mathias",
-      "password": "password"
+      "password": "$2b$12$gw02PNdrXcKLtzVtizArguKgWZDSGL.eeCvFGN5bYfuidc8P6haQu"
     },
     {
       "id": 2,
       "name": "Fushia",
-      "password": "password"
+      "password": "$2b$12$gw02PNdrXcKLtzVtizArguKgWZDSGL.eeCvFGN5bYfuidc8P6haQu"
     },
     {
       "id": 3,
-      "name": "a",
-      "password": "a"
+      "name": "Mathias123",
+      "password": "$2b$12$xC4sD4MMqeGVYiaHbyeQlumgXJSt8bB6Hjy2x2M9eN2KupKMikKKy"
     },
     {
       "id": 4,
-      "name": "a",
-      "password": "ass"
+      "name": "Mathias12",
+      "password": "$2b$12$lpn3NzKeDZy1ZrUiIitMNO6hYYPYbE69laNFoklCAMuGO3rGUV6RK"
     },
     {
       "id": 5,
       "name": "a",
-      "password": "Mathias"
+      "password": "$2b$12$9d0LkcwesZS/8cEqoFHIK.O1XL.9iZPO/B5/8UJ.AbLLgycUCcCKS"
     },
     {
       "id": 6,
-      "name": "ss",
-      "password": "Mathias"
+      "name": "MathiasTheGod",
+      "password": "$2b$12$5F9zzDrcR0ydtrRp5uNZe.TGKZfdUthwNQxcymxDRvQVm4z1lBqy."
     },
     {
       "id": 7,
-      "name": "Mattdadie",
-      "password": "$2b$12$opntIc9MbDRbhtRLaqfAfePW40W7HEpK.e1IJOzH60Vd6NSfnFbyO"
-    },
-    {
-      "id": 8,
-      "name": "Hello",
-      "password": "$2b$12$2PsAv7YxCgZgDlathFwOE.22lv9MgyXjG439JsduagIa3gJRhzB6O"
-    },
-    {
-      "id": 9,
-      "name": "Hello1",
-      "password": "$2b$12$RV7DovBTKOsgb.WtG2Xhl.P4Ms93qr7m5OLcC52IsFgcHbUiDOJmW"
-    },
-    {
-      "id": 10,
-      "name": "Test",
-      "password": "$2b$12$kJC4/2mHzzSEypFiEdumBOk.2gByUjA8TiuUwyLiVPGB2gGP/vwp."
-    },
-    {
-      "id": 11,
-      "name": "Test1",
-      "password": "$2b$12$uY0fVKsFsG2KM5qRSvfVbuH85FISWpP1mzGJV6JpHur33LtUjkSyG"
-    },
-    {
-      "id": 12,
-      "name": "Test3",
-      "password": "$2b$12$yCS9vczhb/KyK4nOtIV4xubRKXkOwd1yGrLxn9nu1xG74jxHJt/QO"
-    },
-    {
-      "id": 13,
-      "name": "Test5",
-      "password": "$2b$12$3O7fphTh.nKy7wJ1wZk/oetzht6sEkmwxur/8u8H7287tA5uwp5gy"
-    },
-    {
-      "id": 14,
-      "name": "mathias",
-      "password": "$2b$12$G2z59XcNjY/uCfDMJkNmPec3n7IAyE0jxVVVZIYobh7ByJdZ7CaL2"
-    },
-    {
-      "id": 15,
-      "name": "Tibbza",
-      "password": "$2b$12$HC/XxwSrkqX2WXg32o/g5ewueVtOVRk9UYfNXYqGCApRk4hntsfJ6"
-    },
-    {
-      "id": 16,
-      "name": "123",
-      "password": "$2b$12$P./RPwzdDa2VEHnDQCZuWOoxEVnBDDKcZ.lfuTYeCUx4RCMbgrb4y"
+      "name": "MathiasTheGo",
+      "password": "$2b$12$Lvqs2pEZCN8Z8WLKxXyurOvvFIOqnACaTpR3HdTvQTqX2IjD4nSXG"
     }
   ]
 }

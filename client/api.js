@@ -5,8 +5,10 @@ export function getData () {
     .then(res => res.body)
 }
 
-export function addData (username, password) {
+export function addData (password, username) {
   return request.post(`/api/v1/user/register`)
     .send({ username, password })
-    .then(res => res.body)
+    .then(res => {
+      return res.statusText
+    })
 }

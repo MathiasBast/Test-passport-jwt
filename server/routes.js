@@ -53,7 +53,7 @@ router.post('/register', (req, res, next) => {
     }
     if (info !== undefined) {
       res.statusMessage = `${info.message}`
-      res.status(403).end()
+      res.status(403).send({ message: info.message }).end()
     } else {
       res.statusMessage = 'user created!'
       res.status(200).end()

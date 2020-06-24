@@ -5,7 +5,8 @@ import { addData } from '../api'
 class Form extends React.Component {
   state = {
     name: '',
-    password: ''
+    password: '',
+    message: ''
   }
 
   handleChange = event => {
@@ -14,6 +15,9 @@ class Form extends React.Component {
 
   handleSubmit = event => {
     addData(this.state.password, this.state.name)
+      .then(res => {
+        this.setState({ message: res })
+      })
   }
 
   render () {
@@ -30,6 +34,8 @@ class Form extends React.Component {
           </label>
           <button type='button' onClick={this.handleSubmit} >Submit</button>
         </form>
+        {this.state.message}
+        <br />
       </>
     )
   }
