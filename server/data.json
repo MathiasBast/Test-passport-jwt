@@ -74,6 +74,11 @@
       "id": 15,
       "name": "Tibbza",
       "password": "$2b$12$HC/XxwSrkqX2WXg32o/g5ewueVtOVRk9UYfNXYqGCApRk4hntsfJ6"
+    },
+    {
+      "id": 16,
+      "name": "123",
+      "password": "$2b$12$P./RPwzdDa2VEHnDQCZuWOoxEVnBDDKcZ.lfuTYeCUx4RCMbgrb4y"
     }
   ]
 }

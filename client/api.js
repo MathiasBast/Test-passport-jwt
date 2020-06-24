@@ -6,6 +6,7 @@ export function getData () {
 }
 
 export function addData (username, password) {
-  return request.post(`/api/v1/user/${username}/${password}`)
+  return request.post(`/api/v1/user/register`)
+    .send({ username, password })
     .then(res => res.body)
 }
