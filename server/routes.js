@@ -50,6 +50,7 @@ router.post('/register', (req, res, next) => {
   passport.authenticate('register', (err, user, info) => {
     if (err) {
       console.error(err)
+      res.send({ err: err.message }).end()
     }
     if (info !== undefined) {
       res.statusMessage = `${info.message}`
