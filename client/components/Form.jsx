@@ -18,6 +18,11 @@ class Form extends React.Component {
       .then(res => {
         this.setState({ message: res })
       })
+      .then(() => {
+        if (this.state.message === 'user created') {
+          console.log('doneee')
+        }
+      })
   }
 
   render () {
