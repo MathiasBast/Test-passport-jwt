@@ -13,4 +13,8 @@ server.use(passport.initialize())
 
 server.use('/api/v1/user', user)
 
+server.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/index.html'))
+})
+
 module.exports = server
