@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { addData } from '../api'
+import { LogIn } from '../api'
 
 class Form extends React.Component {
   state = {
@@ -14,14 +14,9 @@ class Form extends React.Component {
   }
 
   handleSubmit = event => {
-    addData(this.state.password, this.state.name)
+    LogIn(this.state.password, this.state.name)
       .then(res => {
         this.setState({ message: res })
-      })
-      .then(() => {
-        if (this.state.message === 'user created') {
-          console.log('doneee')
-        }
       })
   }
 

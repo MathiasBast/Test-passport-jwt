@@ -34,6 +34,11 @@
       "id": 7,
       "name": "MathiasTheGo",
       "password": "$2b$12$Lvqs2pEZCN8Z8WLKxXyurOvvFIOqnACaTpR3HdTvQTqX2IjD4nSXG"
+    },
+    {
+      "id": 8,
+      "name": "123",
+      "password": "$2b$12$B000KgcGJk1o4U7mZEf2nOo/h.6qmy3cV/lpvj8hxNw8NcF/3qFF2"
     }
   ]
 }
