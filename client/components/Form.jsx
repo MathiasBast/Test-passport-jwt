@@ -1,12 +1,14 @@
 import React from 'react'
 
 import { addData } from '../api'
+import { Redirect } from 'react-router-dom'
 
 class Form extends React.Component {
   state = {
     name: '',
     password: '',
-    message: ''
+    message: '',
+    redirect: false
   }
 
   handleChange = event => {
@@ -25,6 +27,15 @@ class Form extends React.Component {
       })
   }
 
+  componentWillMount = event => {
+    localStorage.getItem('token')
+    if (localStorage.getItem('token')) {
+      this.setState({
+        redirect: true
+      })
+    }
+  }
+
   render () {
     return (
       <>
@@ -41,6 +52,7 @@ class Form extends React.Component {
         </form>
         {this.state.message}
         <br />
+        {this.state.redirect && <Redirect to='/' />}
       </>
     )
   }
