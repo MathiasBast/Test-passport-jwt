@@ -11,7 +11,6 @@ const App = () => {
   }
   return (
     <>
-      {/* <Route path='/' component={Form} /> */}
       <h1>Hiiiiii hello</h1>
       <Link to='/register'>
         <button>register</button>
